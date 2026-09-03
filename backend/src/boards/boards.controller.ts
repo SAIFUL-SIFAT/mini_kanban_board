@@ -5,6 +5,7 @@ import { BoardAccessGuard } from './guards/board-access.guard.js';
 import { BoardResource } from './decorators/board-resource.decorator.js';
 import { CreateBoardDto } from './dto/create-board.dto.js';
 import { AddMemberDto } from './dto/add-member.dto.js';
+import { CreateColumnDto } from './dto/create-column.dto.js';
 
 @Controller('boards')
 @UseGuards(AuthGuard('jwt'))
@@ -40,5 +41,15 @@ export class BoardsController {
     @Body() addMemberDto: AddMemberDto,
   ) {
     return this.boardsService.addMember(req.boardId, addMemberDto.email, addMemberDto.role);
+  }
+
+  @Post(':boardId/columns')
+  @UseGuards(BoardAccessGuard)
+  @BoardResource({ kind: 'board', paramName: 'boardId', minRole: 'MEMBER' })
+  async createColumn(
+    @Req() req: any,
+    @Body() createColumnDto: CreateColumnDto,
+  ) {
+    return this.boardsService.createColumn(req.boardId, createColumnDto);
   }
 }

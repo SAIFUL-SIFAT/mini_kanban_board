@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { BoardsService } from './boards.service.js';
 import { BoardsController } from './boards.controller.js';
+import { ColumnsController } from './columns.controller.js';
+import { TasksController } from './tasks.controller.js';
 
 @Module({
-  controllers: [BoardsController],
+  controllers: [BoardsController, ColumnsController, TasksController],
   providers: [BoardsService],
   exports: [BoardsService],
 })
