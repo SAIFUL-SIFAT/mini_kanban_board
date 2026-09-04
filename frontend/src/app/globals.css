@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-retro: #F5F1E8;
+    --card-retro: #FFFFFF;
+    --border-retro: #18181B;
+    --text-retro: #18181B;
+    --shadow-retro: #000000;
+    --accent-green: #15803D;
+    --accent-mustard: #D97706;
+    --accent-navy: #1E293B;
+  }
+
+  body {
+    background-color: var(--bg-retro);
+    color: var(--text-retro);
+    font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Neobrutalist Shadow Utilities */
+.shadow-retro-sm {
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+.shadow-retro {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.shadow-retro-lg {
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.shadow-retro-amber {
+  box-shadow: 4px 4px 0px 0px #D97706;
+}
+
+.shadow-retro-green {
+  box-shadow: 4px 4px 0px 0px #15803D;
+}
+
+.shadow-retro-danger {
+  box-shadow: 4px 4px 0px 0px #DC2626;
+}
+
+/* Press micro-animations */
+.btn-retro {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-retro:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px 0px #000000;
+}
+
+.btn-retro:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+.card-retro {
+  border: 2px solid #18181B;
+  background-color: #FFFFFF;
+  box-shadow: 4px 4px 0px 0px #000000;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-retro-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+/* Retro Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F1E8;
+  border: 2px solid #18181B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #18181B;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #15803D;
 }

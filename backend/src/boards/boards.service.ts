@@ -36,6 +36,24 @@ export class BoardsService {
           },
         },
       },
+      include: {
+        members: {
+          include: {
+            user: {
+              select: {
+                id: true,
+                name: true,
+                email: true,
+              },
+            },
+          },
+        },
+        columns: {
+          include: {
+            tasks: true,
+          },
+        },
+      },
     });
   }
 
@@ -43,6 +61,17 @@ export class BoardsService {
     return this.prisma.board.findUnique({
       where: { id: boardId },
       include: {
+        members: {
+          include: {
+            user: {
+              select: {
+                id: true,
+                name: true,
+                email: true,
+              },
+            },
+          },
+        },
         columns: {
           orderBy: { order: 'asc' },
           include: {
