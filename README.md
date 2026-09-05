@@ -26,22 +26,22 @@
 
 ---
 
-## ✨ Features
+##  Features
 
 | Feature | Details |
 |---|---|
-| 🔐 **Auth** | JWT-based login & registration with `bcrypt` hashing |
-| 📋 **Boards** | Create, name, and manage multiple Kanban boards |
-| 🏛️ **Columns** | Add / reorder custom columns per board |
-| 🃏 **Tasks** | Create tasks with titles, descriptions, and priority labels |
-| 🖱️ **Drag & Drop** | Optimistic DnD reordering within and across columns |
-| 👥 **Board Sharing** | Invite users by email with OWNER / MEMBER roles |
-| 🎨 **Neo-Brutalist UI** | 2px crisp black borders, offset hard shadows, Space Grotesk typography |
-| 📱 **Responsive** | Works on desktop and mobile |
+|  **Auth** | JWT-based login & registration with `bcrypt` hashing |
+|  **Boards** | Create, name, and manage multiple Kanban boards |
+|  **Columns** | Add / reorder custom columns per board |
+|  **Tasks** | Create tasks with titles, descriptions, and priority labels |
+|  **Drag & Drop** | Optimistic DnD reordering within and across columns |
+|  **Board Sharing** | Invite users by email with OWNER / MEMBER roles |
+|  **Neo-Brutalist UI** | 2px crisp black borders, offset hard shadows, Space Grotesk typography |
+|  **Responsive** | Works on desktop and mobile |
 
 ---
 
-## 🏗️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 - **[Next.js 15](https://nextjs.org/)** — App Router, Server Components, TypeScript
@@ -62,7 +62,7 @@
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 mini_kanban_board/
@@ -92,7 +92,7 @@ mini_kanban_board/
 
 ---
 
-## 🚀 Local Development
+##  Local Development
 
 ### Prerequisites
 - Node.js 20+
@@ -145,8 +145,7 @@ cd frontend && npm run dev
 
 ---
 
-## ☁️ Deployment
-
+##  Deployment
 | Service | Platform | Root Dir |
 |---|---|---|
 | Frontend | Vercel | `frontend` |
@@ -178,7 +177,7 @@ NEXT_PUBLIC_API_URL=https://your-backend.onrender.com
 
 ---
 
-## 🗄️ Database Schema
+##  Database Schema
 
 ```
 User ──< BoardMember >── Board ──< Column ──< Task
@@ -192,6 +191,6 @@ User ──< BoardMember >── Board ──< Column ──< Task
 
 ---
 
-## 📄 License
+##  License
 
 MIT © [SAIFUL-SIFAT](https://github.com/SAIFUL-SIFAT)
